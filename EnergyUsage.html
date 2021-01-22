@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Energy Usage in the U.S.</title>
+    <meta charset="utf-8" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Energy Usage in the U.S. (2007)</h1>
+    <h2 id = "author">Authors: Steven Feng, Lawrence Ko, Wenze Ma, Shiloh Musser, Darren Zhu</h2>
+
+    <div id = "main">
+        <h2> Overview: </h2>
+        <q>The U.S. Energy Information Adminstration collects and curates self-reported information from energy utilities 
+            about energy production and usage in the United States. This data set contains information from over 2,000 U.S. 
+            utilities in 2017. The information includes sources of energy, its uses in different economic sectors, and the 
+            revenues obtained from the sale of electrical energy.</q>
+
+        <div id = "description_div">
+            <h2> Data Description: </h2>
+            <button id = "clickViewDescription" class = "buttons" type="button">Click to view description</button>
+            <img id = "description_img" src="Images/DataDescription.png" alt="Data Description" width="800px"/>
+        </div>
+
+        <div id = "graph_div">
+            <h2> Graphs: </h2>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn">Select x label</button>
+                <div class="dropdown-content" style="left:0;">
+                  <a href="#">Total Generation of Power</a>
+                  <a href="#">Total Power losses</a>
+                  <a href="#">Total Revenue</a>
+                  <a href="#">Peak Summer Demand</a>
+                </div>
+            </div>
+            <div class="dropdown" style="float:right;">
+                <button class="dropbtn">Select y label</button>
+                <div class="dropdown-content">
+                  <a href="#">Peak Summer Demand</a>
+                  <a href="#">Peak Winter Demand</a>
+                  <a href="#">Utility State</a>
+                  <a href="#">Utility Type</a>
+                </div>
+              </div>
+            <img id = "graph_img" class="center" src="Images/background.png" alt="Graph" />
+        </div>
+    </div>
+    <script src="jquery-3.1.1.js"></script>
+    <script language="JavaScript" src="EnergyUsage.js"></script>
+</body>
+
+</html>
