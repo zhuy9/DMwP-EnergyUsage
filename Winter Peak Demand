@@ -1,0 +1,9 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label="Demand.SummerPeak <= 50.45\nsamples = 100.0%\nvalue = [0.499, 0.501]\nclass = high", fillcolor="#feffff"] ;
+1 [label="samples = 50.5%\nvalue = [0.064, 0.936]\nclass = high", fillcolor="#46a4e7"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="samples = 49.5%\nvalue = [0.944, 0.056]\nclass = low", fillcolor="#e78945"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+}
