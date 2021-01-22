@@ -1,0 +1,21 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label="Uses.Total <= 279378.0\nsamples = 100.0%\nvalue = [0.5, 0.5]\nclass = high", fillcolor="#ffffff"] ;
+1 [label="samples = 48.1%\nvalue = [0.0, 1.0]\nclass = high", fillcolor="#399de5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="Sources.Generation <= 8961.0\nsamples = 51.9%\nvalue = [0.963, 0.037]\nclass = low", fillcolor="#e68641"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label="Sources.Other <= 4810.5\nsamples = 40.6%\nvalue = [0.998, 0.002]\nclass = low", fillcolor="#e58139"] ;
+2 -> 3 ;
+4 [label="samples = 39.6%\nvalue = [1.0, 0.0]\nclass = low", fillcolor="#e58139"] ;
+3 -> 4 ;
+5 [label="samples = 1.0%\nvalue = [0.905, 0.095]\nclass = low", fillcolor="#e88e4e"] ;
+3 -> 5 ;
+6 [label="Demand.WinterPeak <= 62.9\nsamples = 11.3%\nvalue = [0.838, 0.162]\nclass = low", fillcolor="#ea995f"] ;
+2 -> 6 ;
+7 [label="samples = 1.3%\nvalue = [0.222, 0.778]\nclass = high", fillcolor="#72b9ec"] ;
+6 -> 7 ;
+8 [label="samples = 10.1%\nvalue = [0.915, 0.085]\nclass = low", fillcolor="#e78d4b"] ;
+6 -> 8 ;
+}
