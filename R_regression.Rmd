@@ -1,0 +1,49 @@
+---
+title: 'DMwP-EnergyUsage'
+author: 'Wenze ma, Darren Zhu, Lawrence Ko, Shiloh Musser, Steven Feng'
+date: ' Jan 22, 2021'
+output:
+  word_document: default
+
+---
+
+# Energy Usage in the U.S.(2007)
+## "The U.S. Energy Information Adminstration collects and curates self-reported information from energy utilities about energy production and usage in the United States. This data set contains information from over 2,000 U.S. utilities in 2017. The information includes sources of energy, its uses in different economic sectors, and the revenues obtained from the sale of electrical energy."
+
+
+```{r}
+getwd()
+setwd('C:/Users/fengr/Desktop/CSSE386_Data_Mining/DMwP-EnergyUsage') #set to the folder where the data is saved
+electricity <- read.csv('electricity.csv', header = TRUE)      #import the data to the R session
+```
+```{r}
+head(electricity)
+```
+```{r}
+plot(electricity$Sources.Generation, electricity$Sources.Purchased, main="Relationship Between Net Generation and Purchase of Power (in MGh)",
+   xlab="Power Generated (MGh) ", ylab="Power Purchased (MGh) ", pch=19)
+```
+It looks like they have inverse or exponential relationship, so just took reciprocal about the power generated.
+
+```{r}
+plot(1/electricity$Sources.Generation, electricity$Sources.Purchased, main="Relationship Between Net Generation and Purchase of Power (in MGh)",
+   xlab="1/Power Generated (MGh^-1) ", ylab="Power Purchased (MGh) ", pch=19)
+```
+
+```{r}
+plot(log(electricity$Sources.Generation), electricity$Sources.Purchased, main="Relationship Between Net Generation and Purchase of Power (in MGh)",
+   xlab="1/Power Generated (MGh^-1) ", ylab="Power Purchased (MGh) ", pch=19)
+```
+
+```{r}
+lm1=lm(electricity$Sources.Purchased~electricity$Sources.Generation)
+summary(lm1)
+```
+```{r}
+plot(lm1)
+```
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
