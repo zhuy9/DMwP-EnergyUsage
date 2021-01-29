@@ -26,24 +26,26 @@
 
         <div id = "graph_div">
             <h2> Graphs: </h2>
-            <div class="dropdown" style="float:left;">
-                <button class="dropbtn">Select x label</button>
-                <div class="dropdown-content" style="left:0;">
-                  <a href="#">Total Generation of Power</a>
-                  <a href="#">Total Power losses</a>
-                  <a href="#">Total Revenue</a>
-                  <a href="#">Peak Summer Demand</a>
-                </div>
-            </div>
-            <div class="dropdown" style="float:right;">
-                <button class="dropbtn">Select y label</button>
-                <div class="dropdown-content">
-                  <a href="#">Peak Summer Demand</a>
-                  <a href="#">Peak Winter Demand</a>
-                  <a href="#">Utility State</a>
-                  <a href="#">Utility Type</a>
-                </div>
-              </div>
+
+            <label for="y_label">Choose y label:</label>
+            <select name="y-axis" id="y_label">
+                <option value="1">Peak Summer Demand</option>
+                <option value="2">Peak Winter Demand</option>
+                <option value="3">Utility State</option>
+                <option value="4">Utility Type</option>
+            </select>
+            <br><br>
+
+            <label for="x_label">Choose x label:</label>
+            <select name="x-axis" id="x_label">
+                <option value="1">Total Generation of Power</option>
+                <option value="2">Total Power losses</option>
+                <option value="3">Total Revenue</option>
+                <option value="4">Peak Summer Demand</option>
+            </select>
+            <br><br>
+            
+            <button id = "clickViewGraphs" class = "buttons" type="button">submit</button>
             <img id = "graph_img" class="center" src="Images/background.png" alt="Graph" />
         </div>
     </div>
