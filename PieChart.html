@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([['Source_Average', 'value'], ['Sources.Generation', 1059884.64], ['Sources.Purchased', 1492859.43], ['Sources.Other', 23689.91]]);
+
+        var options = {
+          title: "Power Source Break Down (Mean)",
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="donutchart" style="width: 900px; height: 520px;"></div>
+  </body>
+</html>
