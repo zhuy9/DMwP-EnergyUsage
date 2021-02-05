@@ -76,7 +76,31 @@ DMwR::regr.eval(electricity$Revenue.Total, lmMod$fitted.values) # error for the 
 ```{r}
 DMwR::regr.eval(electricity$Revenue.Total, rlmMod$fitted.values) # error for the above rlm model
 ```
+```{r}
+library(plyr)
+count(electricity$Revenue.Resale!=0)
 
+```
+```{r}
+385/dim(electricity)[1]
+```
+```{r}
+electricity$Resale[electricity$Revenue.Resale>0] <- 1
+electricity$Resale[electricity$Revenue.Resale==0] <- 0
+```
+
+```{r}
+pairs(~electricity$Revenue.Total + electricity$Resale + electricity$Retail.Total.Revenue + electricity$Retail.Total.Sales + electricity$Retail.Total.Customers)
+```
+
+```{r}
+
+plot(electricity$Retail.Total.Revenue,electricity$Revenue.Total, pch=as.numeric(electricity$Utility.Type),
+     main="Total Revenue Predicted by Total Retail Revenue With Multiple Util Type",
+     ylab="Total Revenue (kUSD)", xlab="Total Retail Revenue (kUSD)")
+legend("bottomright", as.character(unique(electricity$Utility.Type)), 
+       pch=as.numeric(unique(electricity$Utility.Type)))
+```
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
