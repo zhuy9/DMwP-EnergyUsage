@@ -5,6 +5,22 @@
     <title>Energy Usage in the U.S.</title>
     <meta charset="utf-8" />
     <link href="style.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([['Source_Average', 'value'], ['Sources.Generation', 1059884.64], ['Sources.Purchased', 1492859.43], ['Sources.Other', 23689.91]]);
+
+        var options = {
+          title: "Power Source Break Down (Mean)",
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 
 <body>
@@ -25,8 +41,15 @@
         </div>
 
         <div id = "graph_div">
-            <h2> Graphs: </h2>
-
+            <h2> Graphs: 
+            <select name="graph-type" id="graph-type">
+                <option value="1">X-Y Label Plots</option>
+                <option value="2">Pie Charts</option>
+            </select>
+            <button id = "changeGraphType" class = "buttons" type="button">Change</button>
+            </h2>
+			
+			<div id="selection">
             <label for="y_label">Choose y label:</label>
             <select name="y-axis" id="y_label">
                 <option value="1">Peak Summer Demand</option>
@@ -44,9 +67,14 @@
                 <option value="4">Peak Summer Demand</option>
             </select>
             <br><br>
-            
+            </div>
             <button id = "clickViewGraphs" class = "buttons" type="button">submit</button>
-            <img id = "graph_img" class="center" src="Images/background.png" alt="Graph" />
+            <div id="displayArea"></div>
+
+			<div id="donutchart" style="width: 900px; height: 520px; display: none;"></div>
+            <img id = "graph_img" class="center" style="display: none;" src="Images/background.png" alt="Graph" />
+
+            
         </div>
     </div>
     <script src="jquery-3.1.1.js"></script>
