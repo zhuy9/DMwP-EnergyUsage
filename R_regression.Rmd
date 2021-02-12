@@ -94,12 +94,12 @@ pairs(~electricity$Revenue.Total + electricity$Resale + electricity$Retail.Total
 ```
 
 ```{r}
-
-plot(electricity$Retail.Total.Revenue,electricity$Revenue.Total, pch=as.numeric(electricity$Utility.Type),
-     main="Total Revenue Predicted by Total Retail Revenue With Multiple Util Type",
-     ylab="Total Revenue (kUSD)", xlab="Total Retail Revenue (kUSD)")
-legend("bottomright", as.character(unique(electricity$Utility.Type)), 
-       pch=as.numeric(unique(electricity$Utility.Type)))
+# Build the model on training data -
+lmMod2 <- lm(electricity$Revenue.Total ~ electricity$Sources.Total + electricity$Retail.Total.Revenue + electricity$Retail.Total.Sales + electricity$Retail.Total.Customers + as.factor(electricity$Utility.Type) + electricity$Resale, data=trainingData)  # build the model
+revPred2 <- predict(lmMod2, testData)  # predict distance
+```
+```{r}
+summary(lmMod2)
 ```
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 

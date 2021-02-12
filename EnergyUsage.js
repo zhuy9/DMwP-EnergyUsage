@@ -67,29 +67,29 @@
             } else if (x == '1' && y == '4') {
                 $('#graph_img').attr('src','Figure/totGenByUType.png');
             } else if (x == '2' && y == '1') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '2' && y == '2') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '2' && y == '3') {
                 $('#graph_img').attr('src','Figure/powerLossAllKinds.png');
             } else if (x == '2' && y == '4') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '3' && y == '1') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '3' && y == '2') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '3' && y == '3') {
                 $('#graph_img').attr('src','Figure/totRevenueByState.png');
             } else if (x == '3' && y == '4') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '4' && y == '1') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '4' && y == '2') {
                 $('#graph_img').attr('src','Figure/summerWinterPeak.png');
             } else if (x == '4' && y == '3') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             } else if (x == '4' && y == '4') {
-                $('#graph_img').attr('src','Figure/.png');
+                $('#graph_img').attr('src','Figure/noPlot.png');
             }
 			} else if (graph == "2") {
 				// Show Pie Chart
