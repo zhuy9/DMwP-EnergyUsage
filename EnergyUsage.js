@@ -30,19 +30,26 @@
 			if (graph == '1') {
 				console.log("graph-type1: "+graph)
 				document.getElementById("selection").style.display = '';
+				document.getElementById("selection_bar").style.display = 'none';
 			} else if (graph == '2') {
 				console.log("graph-type2: "+graph)
 				document.getElementById("selection").style.display = 'none';
+				document.getElementById("selection_bar").style.display = 'none';
+			} else if (graph == '3') {
+				console.log("graph-type3: "+graph)
+				document.getElementById("selection").style.display = 'none';	
+				document.getElementById("selection_bar").style.display = '';
 			}
 			
 		});
 
         $('#clickViewGraphs').click(function () {
         	var graph = $('#graph-type').val();
-            var x = $('#x_label').val()
-            var y = $('#y_label').val()
+            
 
 			if (graph == "1") {
+			var x = $('#x_label').val()
+            var y = $('#y_label').val()
 				//XY Plot
 				document.getElementById("donutchart").style.display = 'none';
 				document.getElementById("donutchart").style.width = "0px";
@@ -96,6 +103,25 @@
 // 				div.style.width = "900px";
 // 				div.style.height = "520px";
 // 				document.getElementById("displayArea").appendChild(div);
+			} else if (graph == "3") {
+			var x = $('#x_label_bar').val()
+            var y = $('#y_label_bar').val()
+				// Show Bar Chart
+				//XY Plot
+				document.getElementById("donutchart").style.display = 'none';
+				document.getElementById("donutchart").style.width = "0px";
+				document.getElementById("donutchart").style.height = "0px";
+				
+				document.getElementById("graph_img").style.display = '';
+				
+				if (x == '1' && y == '1') {
+                $('#graph_img').attr('src','Figure/CustomerNumberRCIT.png');
+            } else if (x == '1' && y == '2') {
+                $('#graph_img').attr('src','Figure/RevenueRCIT.png');
+            } else if (x == '1' && y == '3') {
+                $('#graph_img').attr('src','Figure/PowerDeliveredRCIT.png');
+            }
+				
 			}
             
 		

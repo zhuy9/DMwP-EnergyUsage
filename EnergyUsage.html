@@ -45,6 +45,7 @@
             <select name="graph-type" id="graph-type">
                 <option value="1">X-Y Label Plots</option>
                 <option value="2">Pie Charts</option>
+                <option value='3'>Bar Charts</option>
             </select>
             <button id = "changeGraphType" class = "buttons" type="button">Change</button>
             </h2>
@@ -68,6 +69,23 @@
             </select>
             <br><br>
             </div>
+            
+            <div id="selection_bar" style="display: none;">
+            <label for="y_label">Choose y label:</label>
+            <select name="y-axis" id="y_label_bar">
+                <option value="1">Customer Number</option>
+                <option value="2">Revenue (thousands of US Dollar)</option>
+                <option value="3">Power Delivered to Customers (MWh)</option>
+            </select>
+            <br><br>
+
+            <label for="x_label">Choose x label:</label>
+            <select name="x-axis" id="x_label_bar">
+                <option value="1">Utility Type</option>
+            </select>
+            <br><br>
+            </div>
+            
             <button id = "clickViewGraphs" class = "buttons" type="button">submit</button>
             <div id="displayArea"></div>
 
