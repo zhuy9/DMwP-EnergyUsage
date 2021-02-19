@@ -4,18 +4,6 @@
     
     var graphMenuSelection = document.getElementById('graph-type');
     
-//    function graphMenuDropdown () {
-//     	switch(this.graphMenuSelection) {
-//     		case '1':
-//     			console.log('X-Y Plot selected');
-//     			break;
-//     		case '2':
-//     			console.log('Pie Chart selected');
-//     			break;
-//     	}
-//     }
-//     
-//     graphMenuSelection.addEventListener('change', graphMenuDropdown, false);
 
     function setup() {
         $('#clickViewDescription').click(function () {
@@ -40,6 +28,18 @@
 				console.log("graph-type3: "+graph)
 				document.getElementById("selection").style.display = 'none';	
 				document.getElementById("selection_bar").style.display = '';
+			} else if (graph == '4') {
+				console.log("graph-type4: "+graph)
+				document.getElementById("selection").style.display = 'none';	
+				document.getElementById("selection_bar").style.display = 'none';
+				document.getElementById("chart1").style.display='';
+				document.getElementById("chart2").style.display='none';
+			} else if (graph == '5') {
+				console.log("graph-type5: "+graph)
+				document.getElementById("selection").style.display = 'none';	
+				document.getElementById("selection_bar").style.display = 'none';
+				document.getElementById("chart1").style.display='none';
+				document.getElementById("chart2").style.display='';
 			}
 			
 		});
@@ -122,7 +122,16 @@
             } else if (x == '1' && y == '3') {
                 $('#graph_img').attr('src','Figure/PowerDeliveredRCIT.png');
             }
-				
+			} else if (graph == "4") {
+				document.getElementById("graph_img").style.display = 'none';
+				document.getElementById("donutchart").style.display = 'none';
+				document.getElementById("chart1").style.display='';
+				document.getElementById("chart2").style.display='none';
+			} else if (graph == "5") {
+				document.getElementById("graph_img").style.display = 'none';
+				document.getElementById("donutchart").style.display = 'none';
+				document.getElementById("chart1").style.display='none';
+				document.getElementById("chart2").style.display='';
 			}
             
 		
