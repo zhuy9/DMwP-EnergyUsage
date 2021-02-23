@@ -48,6 +48,7 @@
                 <option value='3'>Bar Charts</option>
                 <option value='4'>X-Y Label Interactive Plot</option>
                 <option value='5'>Interactive Bar Chart</option>
+                <option value='6'>Decision Trees</option>
             </select>
             <button id = "changeGraphType" class = "buttons" type="button">Change</button>
             </h2>
@@ -86,6 +87,17 @@
                 <option value="1">Utility Type</option>
             </select>
             <br><br>
+            </div>
+            <div id="selection_tree" style="display: none;">
+                <label for="tree">Choose Decision Tree:</label>
+                <select name="tree" id="selected_tree">
+                    <option value="1">Sources Generation</option>
+                    <option value="2">Sources Purchased</option>
+                    <option value="3">Sources Total</option>
+                    <option value="4">Summer Peak Demmand</option>
+                    <option value="5">Winter Peak Demmand</option>
+                </select>
+                <br><br>
             </div>
             
             <button id = "clickViewGraphs" class = "buttons" type="button">submit</button>

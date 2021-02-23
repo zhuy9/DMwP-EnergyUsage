@@ -15,36 +15,57 @@
         });
 
 		$('#changeGraphType').click(function (){
+            document.getElementById("graph_img").style.display = 'none';
+            document.getElementById("chart1").style.display = 'none';
+            document.getElementById("chart2").style.display = 'none';
+
+
 			var graph = $('#graph-type').val();
 			if (graph == '1') {
 				console.log("graph-type1: "+graph)
 				document.getElementById("selection").style.display = '';
 				document.getElementById("selection_bar").style.display = 'none';
+                document.getElementById("selection_tree").style.display = 'none';
 			} else if (graph == '2') {
 				console.log("graph-type2: "+graph)
 				document.getElementById("selection").style.display = 'none';
 				document.getElementById("selection_bar").style.display = 'none';
+                document.getElementById("selection_tree").style.display = 'none';
 			} else if (graph == '3') {
 				console.log("graph-type3: "+graph)
 				document.getElementById("selection").style.display = 'none';	
 				document.getElementById("selection_bar").style.display = '';
+                document.getElementById("selection_tree").style.display = 'none';
 			} else if (graph == '4') {
 				console.log("graph-type4: "+graph)
 				document.getElementById("selection").style.display = 'none';	
 				document.getElementById("selection_bar").style.display = 'none';
 				document.getElementById("chart1").style.display='';
 				document.getElementById("chart2").style.display='none';
+                document.getElementById("selection_tree").style.display = 'none';
 			} else if (graph == '5') {
 				console.log("graph-type5: "+graph)
 				document.getElementById("selection").style.display = 'none';	
 				document.getElementById("selection_bar").style.display = 'none';
 				document.getElementById("chart1").style.display='none';
 				document.getElementById("chart2").style.display='';
-			}
+                document.getElementById("selection_tree").style.display = 'none';
+			} else if (graph == '6') {
+                console.log("graph-type5: "+graph)
+				document.getElementById("selection").style.display = 'none';	
+				document.getElementById("selection_bar").style.display = 'none';
+				document.getElementById("chart1").style.display='none';
+				document.getElementById("chart2").style.display='none';
+                document.getElementById("selection_tree").style.display = '';
+
+            }
 			
 		});
 
         $('#clickViewGraphs').click(function () {
+            document.getElementById("graph_img").style.display = 'none';
+            document.getElementById("chart1").style.display = 'none';
+            document.getElementById("chart2").style.display = 'none';
         	var graph = $('#graph-type').val();
             
 
@@ -132,7 +153,25 @@
 				document.getElementById("donutchart").style.display = 'none';
 				document.getElementById("chart1").style.display='none';
 				document.getElementById("chart2").style.display='';
-			}
+			} else if (graph == "6") {
+                document.getElementById("donutchart").style.display = 'none';
+				document.getElementById("donutchart").style.width = "0px";
+				document.getElementById("donutchart").style.height = "0px";
+				
+				document.getElementById("graph_img").style.display = '';
+                var x = $('#selected_tree').val()
+                if (x == '1') {
+                    $('#graph_img').attr('src','Figure/SourcesGenerationDecisionTree.png');
+                } else if (x == '2') {
+                    $('#graph_img').attr('src','Figure/SourcesPurchasedDecisionTree.png');
+                } else if (x == '3') {
+                    $('#graph_img').attr('src','Figure/SourcesTotalDecisionTree.png');
+                } else if (x == '4') {
+                    $('#graph_img').attr('src','Figure/SummerPeakDemand.png');
+                } else if (x == '5') {
+                    $('#graph_img').attr('src','Figure/WinterPeakDemand.png');
+                }
+            }
             
 		
         });
